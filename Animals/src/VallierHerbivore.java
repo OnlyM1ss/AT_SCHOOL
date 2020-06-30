@@ -12,8 +12,7 @@ public class VallierHerbivore extends Herbivore {
     public void giraffe() {
         if (!giraffeAll.isEmpty()) {
             System.out.println(move());
-        }
-        else{
+        } else {
             addAnimal();
         }
     }
@@ -21,8 +20,7 @@ public class VallierHerbivore extends Herbivore {
     public void lemur() {
         if (!lemurAll.isEmpty()) {
             System.out.println(move());
-        }
-        else{
+        } else {
             addAnimal();
         }
 
@@ -32,8 +30,7 @@ public class VallierHerbivore extends Herbivore {
     public void duck() {
         if (!duckAll.isEmpty()) {
             System.out.println(move());
-        }
-        else{
+        } else {
             addAnimal();
         }
 
@@ -51,7 +48,7 @@ public class VallierHerbivore extends Herbivore {
                 lemurAll.add(type);
 
             case (3):
-                type = "Утка" + HelpFunc.takeName();
+                type = "Утка " + HelpFunc.takeName() + " ";
                 duckAll.add(type);
                 System.out.println(type + " Добавлено!");
             case (4):

@@ -40,7 +40,7 @@ abstract public class Carnivorous extends Animals {
     }
 
     public String move() {
-        switch (HelpFunc.randomInt(1, 4)) {
+        switch (HelpFunc.randomInt(1, 5)) {
             case (1):
                 return eat();
             case (2):
@@ -49,6 +49,9 @@ abstract public class Carnivorous extends Animals {
                 return look();
             case (4):
                 return take();
+            case(5):
+                addAnimal();
+                return "Добавлено";
         }
         return null;
     }
