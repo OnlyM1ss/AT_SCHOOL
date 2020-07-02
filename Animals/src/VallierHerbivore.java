@@ -43,14 +43,18 @@ public class VallierHerbivore extends Herbivore {
             case (1):
                 type = "Жираф " + HelpFunc.takeName();
                 giraffeAll.add(type);
+                System.out.println(type + "Добавлено");
             case (2):
                 type = "Лемур " + HelpFunc.takeName();
                 lemurAll.add(type);
+                System.out.println(type + "Добавлено");
 
             case (3):
                 type = "Утка " + HelpFunc.takeName() + " ";
                 duckAll.add(type);
                 System.out.println(type + " Добавлено!");
+                System.out.println(" Количество уток: " + duckAll.size() + " Количество Лемуров: " + lemurAll.size()
+                        + " Количество  Жирафов:" + giraffeAll.size());
             case (4):
                 System.out.println("Вальер переполнен! :c");
         }

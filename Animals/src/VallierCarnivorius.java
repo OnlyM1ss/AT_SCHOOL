@@ -12,17 +12,17 @@ public class VallierCarnivorius extends Carnivorous {
 
     public void lion() {
         if (!lionAll.isEmpty())
-            move();
+            System.out.println(move());
         else addAnimal();
     }
 
     public void tiger() {
-        if (!tigerAll.isEmpty()) move();
+        if (!tigerAll.isEmpty()) System.out.println(move());
         else addAnimal();
     }
 
     public void shark() {
-        if (!sharkAll.isEmpty()) move();
+        if (!sharkAll.isEmpty()) System.out.println(move());
         else addAnimal();
     }
 
@@ -32,15 +32,19 @@ public class VallierCarnivorius extends Carnivorous {
         switch (HelpFunc.randomInt(1, 4)) {
             case (1):
                 type = "Лев " + HelpFunc.takeName();
-                lionAll.add(type + "Добавлено");
+                lionAll.add(type);
+                System.out.println(type + "Добавлено");
             case (2):
                 type = "Тигр " + HelpFunc.takeName();
-                tigerAll.add(type + "Добавлено");
+                tigerAll.add(type);
+                System.out.println(type + "Добавлено");
 
             case (3):
                 type = "Акула " + HelpFunc.takeName();
                 sharkAll.add(type);
                 System.out.println(type + "Добавлено!");
+                System.out.println(" Количество Львов: " + lionAll.size() + " Количество Тигров: " + tigerAll.size()
+                        + " Количество  Акул:" + sharkAll.size());
             case (4):
                 System.out.println("Вальер переполнен! :c");
         }

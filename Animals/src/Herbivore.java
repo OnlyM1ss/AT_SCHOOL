@@ -1,21 +1,31 @@
+import java.util.ArrayList;
+
 abstract class Herbivore extends Animals {
     /*
      *Травоядных можно гладить
      * Травоядных можно взять на руки
      */
-    int satiety = 50;
-    int happy = 50;
+    int satiety = 0;
+    int happy = 0;
 
     @Override
     protected String eat() {
         int currentEat = 0;
-        String Food = Eat.typeOfEat();
-        if (Food == "Трава" || Food == "стрепня Мамы") {
+        ArrayList<Eat> food = new ArrayList<>();
+        food.add(Eat.Grass);
+        food.add(Eat.MomsCooking);
+        food.add(Eat.Chicken);
+        food.add(Eat.HotDog);
+        food.add(Eat.Pork);
+
+        int a = HelpFunc.randomInt(0,4);
+
+        if (a == 0 | a == 1) {
             currentEat = HelpFunc.randomInt(1, 5);
             satiety += currentEat;
-            return "стал сытнее: " + currentEat;
+            return "стал сытнее на : " + currentEat + " Съев: " + food.get(a);
         } else {
-            return "Травоядные не едят: " + Food;
+            return "Травоядные не едят: " + food.get(a);
         }
 
     }
