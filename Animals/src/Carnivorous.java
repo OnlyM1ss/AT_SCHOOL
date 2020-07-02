@@ -9,7 +9,7 @@ abstract public class Carnivorous extends Animals {
     @Override
     protected String eat() {
         int currentEat = 0;
-        currentEat -= HelpFunc.randomInt(1, 5);
+        currentEat = HelpFunc.randomInt(1, 5);
         satiety += currentEat;
         return "стал сытнее: " + currentEat;
 
@@ -18,7 +18,7 @@ abstract public class Carnivorous extends Animals {
     @Override
     protected String caress() {
         int currentHappy = 0;
-        currentHappy -= HelpFunc.randomInt(1, 5);
+        currentHappy = HelpFunc.randomInt(1, 5);
         happy += currentHappy;
         return "псс, аккуратнее, он же хищник!: ";
     }
@@ -26,7 +26,7 @@ abstract public class Carnivorous extends Animals {
     @Override
     protected String look() {
         int currentHappy = 0;
-        currentHappy -= HelpFunc.randomInt(1, 5);
+        currentHappy = HelpFunc.randomInt(1, 5);
         happy -= currentHappy;
         return "стал грустнее что не может откусить палец на: " + currentHappy;
     }
@@ -34,7 +34,7 @@ abstract public class Carnivorous extends Animals {
     @Override
     protected String take() {
         int currentHappy = 0;
-        currentHappy -= HelpFunc.randomInt(1, 5);
+        currentHappy = HelpFunc.randomInt(1, 5);
         happy += currentHappy;
         return "псс, аккуратнее, он же хищник!: " + currentHappy;
     }

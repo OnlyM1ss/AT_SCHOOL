@@ -11,7 +11,7 @@ abstract class Herbivore extends Animals {
         int currentEat = 0;
         String Food = Eat.typeOfEat();
         if (Food == "Трава" || Food == "стрепня Мамы") {
-            currentEat -= HelpFunc.randomInt(1, 5);
+            currentEat = HelpFunc.randomInt(1, 5);
             satiety += currentEat;
             return "стал сытнее: " + currentEat;
         } else {
@@ -23,7 +23,7 @@ abstract class Herbivore extends Animals {
     @Override
     protected String caress() {
         int currentHappy = 0;
-        currentHappy -= HelpFunc.randomInt(1, 5);
+        currentHappy = HelpFunc.randomInt(1, 5);
         happy += currentHappy;
         return "стал выселее от поглаживаний на: " + currentHappy;
     }
@@ -31,7 +31,7 @@ abstract class Herbivore extends Animals {
     @Override
     protected String look() {
         int currentHappy = 0;
-        currentHappy -= HelpFunc.randomInt(1, 5);
+        currentHappy = HelpFunc.randomInt(1, 5);
         happy += currentHappy;
         return "стал грустнее что на него смотрят на: " + currentHappy;
     }
@@ -39,7 +39,7 @@ abstract class Herbivore extends Animals {
     @Override
     protected String take() {
         int currentHappy = 0;
-        currentHappy -= HelpFunc.randomInt(1, 5);
+        currentHappy = HelpFunc.randomInt(1, 5);
         happy += currentHappy;
         return "стал выселее что его взяли на руки на: " + currentHappy;
 
