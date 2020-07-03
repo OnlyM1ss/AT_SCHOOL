@@ -1,5 +1,5 @@
 public class Realize {
-    public void interaction() {
+    public void interaction() throws EatException {
         VallierCarnivorius vallierCarnivorius = new VallierCarnivorius();
         VallierHerbivore vallierHerbivore = new VallierHerbivore();
         for (int i = 0; i < 50; i++) {

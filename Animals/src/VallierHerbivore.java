@@ -9,7 +9,7 @@ public class VallierHerbivore extends Herbivore {
     ArrayList<String> lemurAll = new ArrayList<>();
     ArrayList<String> duckAll = new ArrayList<>();
 
-    public void giraffe() {
+    public void giraffe() throws EatException {
         if (!giraffeAll.isEmpty()) {
             System.out.println(move());
         } else {
@@ -17,7 +17,7 @@ public class VallierHerbivore extends Herbivore {
         }
     }
 
-    public void lemur() {
+    public void lemur() throws EatException {
         if (!lemurAll.isEmpty()) {
             System.out.println(move());
         } else {
@@ -27,7 +27,7 @@ public class VallierHerbivore extends Herbivore {
 
     }
 
-    public void duck() {
+    public void duck() throws EatException {
         if (!duckAll.isEmpty()) {
             System.out.println(move());
         } else {
@@ -60,7 +60,7 @@ public class VallierHerbivore extends Herbivore {
         }
     }
 
-    public void chouseHerbivore() {
+    public void chouseHerbivore() throws EatException {
         switch (HelpFunc.randomInt(1, 3)) {
             case (1):
                 giraffe();

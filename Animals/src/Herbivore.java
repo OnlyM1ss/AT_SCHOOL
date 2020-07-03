@@ -9,25 +9,21 @@ abstract class Herbivore extends Animals {
     int happy = 0;
 
     @Override
-    protected String eat() {
+    protected String eat() throws EatException {
         int currentEat = 0;
-        ArrayList<Eat> food = new ArrayList<>();
-        food.add(Eat.Grass);
-        food.add(Eat.MomsCooking);
-        food.add(Eat.Chicken);
-        food.add(Eat.HotDog);
-        food.add(Eat.Pork);
+        ArrayList<eFood> food = new ArrayList<>();
+        food.add(eFood.Grass);
+        food.add(eFood.MomsCooking);
+        food.add(eFood.Chicken);
+        food.add(eFood.HotDog);
+        food.add(eFood.Pork);
 
-        int a = HelpFunc.randomInt(0,4);
-
-        if (a == 0 | a == 1) {
+        EatForType eat = new EatForType();
+        int a = HelpFunc.randomInt(0, 4);
+        eat.eatForHerbivore(food.get(a));
             currentEat = HelpFunc.randomInt(1, 5);
             satiety += currentEat;
             return "стал сытнее на : " + currentEat + " Съев: " + food.get(a);
-        } else {
-            return "Травоядные не едят: " + food.get(a);
-        }
-
     }
 
     @Override
@@ -54,7 +50,8 @@ abstract class Herbivore extends Animals {
         return "стал выселее что его взяли на руки на: " + currentHappy;
 
     }
-    public String move() {
+
+    public String move() throws EatException {
         switch (HelpFunc.randomInt(1, 5)) {
             case (1):
                 return eat();
@@ -65,11 +62,22 @@ abstract class Herbivore extends Animals {
 
             case (4):
                 return take();
-            case(5):
+            case (5):
                 addAnimal();
                 return "Добавлено";
         }
         return null;
     }
+}
 
+class EatException extends Exception {
+    /**
+     * не тот тип еды
+     *
+     * @param message - message of error
+     */
+
+    public EatException(String message) {
+        super(message);
+    }
 }

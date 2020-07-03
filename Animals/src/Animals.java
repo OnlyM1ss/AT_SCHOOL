@@ -1,6 +1,6 @@
 abstract public class Animals {
 
-    protected String eat() {
+    protected String eat() throws EatException {
         return "Питомец покушал";
     }
 

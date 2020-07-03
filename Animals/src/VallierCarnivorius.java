@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class VallierCarnivorius extends Carnivorous {
     /*
-     *Лев
+     * Лев
      * Тигр
      * Акула
      */
