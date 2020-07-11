@@ -1,10 +1,12 @@
 import java.util.ArrayList;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 public class VallierHerbivore extends Herbivore {
     /*
      * Жираф
      * Лемур
      * Утка(обязательно*)*/
+    Logger logger = LogManager.getLogger();
     ArrayList<String> giraffeAll = new ArrayList<>();
     ArrayList<String> lemurAll = new ArrayList<>();
     ArrayList<String> duckAll = new ArrayList<>();
@@ -53,10 +55,10 @@ public class VallierHerbivore extends Herbivore {
                 type = "Утка " + HelpFunc.takeName() + " ";
                 duckAll.add(type);
                 System.out.println(type + " Добавлено!");
-                System.out.println(" Количество уток: " + duckAll.size() + " Количество Лемуров: " + lemurAll.size()
+                logger.info(" Количество уток: " + duckAll.size() + " Количество Лемуров: " + lemurAll.size()
                         + " Количество  Жирафов:" + giraffeAll.size());
             case (4):
-                System.out.println("Вальер переполнен! :c");
+                logger.error("Вальер переполнен! :c");
         }
     }
 
