@@ -45,11 +45,11 @@ public class VallierHerbivore extends Herbivore {
             case (1):
                 type = "Жираф " + HelpFunc.takeName();
                 giraffeAll.add(type);
-                System.out.println(type + "Добавлено");
+                logger.info(type + "Добавлено");
             case (2):
                 type = "Лемур " + HelpFunc.takeName();
                 lemurAll.add(type);
-                System.out.println(type + "Добавлено");
+                logger.info(type + "Добавлено");
 
             case (3):
                 type = "Утка " + HelpFunc.takeName() + " ";
