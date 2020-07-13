@@ -20,13 +20,13 @@ public class main {
         WebElement ecategory = webDriver.findElement(By.id("category"));//категория товара
         Select category = new Select(ecategory);
         category.selectByValue("99");//значение
-        WebElement mainLocation = webDriver.findElement(By.xpath("//div[@class='main-root-Xf3Eb']"));
         webDriver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+        WebElement mainLocation = webDriver.findElement(By.xpath("//div[@class='main-root-Xf3Eb']"));
         mainLocation.findElement(By.xpath("//div[@class='main-locationWrapper-3C0pT']")).click();
         WebElement inputCity = webDriver.findElement(By.xpath("//div[@class='popup-city-2f27s']"));
         inputCity.findElement(By.xpath("//input[@class='suggest-input-3p8yi']")).sendKeys("Владивосток");
-        WebElement showPresent = webDriver.findElement(By.xpath("//div[@class='popup-buttons-NqjQ3']"));
         webDriver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        WebElement showPresent = webDriver.findElement(By.xpath("//div[@class='popup-buttons-NqjQ3']"));
         WebElement buttonPresent = webDriver.findElement(By.xpath("//div"));
         showPresent.findElement(By.xpath("//button[@class='button-button-2Fo5k button-size-m-7jtw4 button-primary-1RhOG']")).click();
         WebElement indexContent = webDriver.findElement(By.xpath("//div[@class='index-content-2lnSO']"));
@@ -38,10 +38,6 @@ public class main {
         System.out.println("Имя первого принтера: " + nameFirstPrinter.getText());
         WebElement priceFirstPrinter = firstPrinter.findElement(By.xpath("//div[@class='snippet-price-row']")).findElement(By.xpath("//span[@class='snippet-price ']"));
         System.out.println("Цена: " + priceFirstPrinter.getText());
-        /*Второй принтер*/
-        WebElement secondPrinter = webDriver.findElement(By.xpath("//div[@class='snippet-horizontal   item item_table clearfix js-catalog-item-enum item-with-contact js-item-extended']")).findElement(By.xpath("//div[@class='item__line']")).findElement(By.xpath("//div[@class='item_table-wrapper']")).findElement(By.xpath("//div[@class='description item_table-description']"));
-        WebElement nameSecondPrinter = secondPrinter.findElement(By.xpath("//div[@class='snippet-title-row']")).findElement(By.xpath("//h3[@class='snippet-title']")).findElement(By.xpath("//a[@class='snippet-link']"));
-        System.out.println("Имя второго принтера: " + nameSecondPrinter.getText());
         webDriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         webDriver.quit();
     }
