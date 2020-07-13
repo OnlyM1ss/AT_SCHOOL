@@ -15,17 +15,16 @@ public class main {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\D1sabler\\AT_SCHOOL\\Selenium\\src\\chromedriver.exe");
         WebDriver webDriver = new ChromeDriver();
+        webDriver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         webDriver.get("https://www.avito.ru");
         webDriver.findElement(By.id("search")).sendKeys("Принтер");
         WebElement ecategory = webDriver.findElement(By.id("category"));//категория товара
         Select category = new Select(ecategory);
         category.selectByValue("99");//значение
-        webDriver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
         WebElement mainLocation = webDriver.findElement(By.xpath("//div[@class='main-root-Xf3Eb']"));
         mainLocation.findElement(By.xpath("//div[@class='main-locationWrapper-3C0pT']")).click();
         WebElement inputCity = webDriver.findElement(By.xpath("//div[@class='popup-city-2f27s']"));
         inputCity.findElement(By.xpath("//input[@class='suggest-input-3p8yi']")).sendKeys("Владивосток");
-        webDriver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         WebElement showPresent = webDriver.findElement(By.xpath("//div[@class='popup-buttons-NqjQ3']"));
         WebElement buttonPresent = webDriver.findElement(By.xpath("//div"));
         showPresent.findElement(By.xpath("//button[@class='button-button-2Fo5k button-size-m-7jtw4 button-primary-1RhOG']")).click();
@@ -38,7 +37,6 @@ public class main {
         System.out.println("Имя первого принтера: " + nameFirstPrinter.getText());
         WebElement priceFirstPrinter = firstPrinter.findElement(By.xpath("//div[@class='snippet-price-row']")).findElement(By.xpath("//span[@class='snippet-price ']"));
         System.out.println("Цена: " + priceFirstPrinter.getText());
-        webDriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         webDriver.quit();
     }
 }
