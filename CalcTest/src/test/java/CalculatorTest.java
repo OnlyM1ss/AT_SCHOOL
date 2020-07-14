@@ -60,17 +60,6 @@ public class CalculatorTest extends Assert {
         };
     }
 
-    //дд для негативных тестов
-    @DataProvider(name = "NegativeCalcData")
-    public Object[][] CalcDataNegative() {
-        return new Object[][]{
-                {"seven", 2, 9},
-                {true, 3, 123},
-                {null, 2, 50},
-                {1.2, 12, 1},
-        };
-    }
-
     @Test(dataProvider = "positiveMultiplyData")
     public void testMultiply(String a, String b, int expected) throws Exception {
         //Позитивные кейсы
@@ -93,10 +82,6 @@ public class CalculatorTest extends Assert {
         Assert.assertEquals(calculator.divvy(a, b), expected);
     }
 
-    //@Test(dataProvider = "NegativeCalcData", expectedExceptions = {ClassCastException.class, NullPointerException.class})
-    //public void testMultiplyNegative(String a, String b, Object expected) {
-      //  Assert.assertEquals(calculator.multyply(a, b),expected);
-    //}
 
     @Test
     public void testMultiplyCommon() throws Exception {
