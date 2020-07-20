@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public class main {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\D1sabler\\AT_SCHOOL\\Selenium\\src\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\D1sabler\\AT_SCHOOL\\Selenium\\src\\main\\resources\\chromedriver.exe");
         WebDriver webDriver = new ChromeDriver();
         webDriver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         webDriver.get("https://www.avito.ru");
